@@ -1,6 +1,8 @@
-将工程转换为纯pod有以下重要步骤：
-1.首先初始化pod工程，这些就不赘述了，自行google
-2.然后就是编辑podfile文件夹了，非常重要，文件如下：
+# React-native转换成纯pod依赖的方法及遇到的问题
+
+## 将工程转换为纯pod有以下重要步骤： ##
+1. 首先初始化pod工程，这些就不赘述了，自行google
+2. 然后就是编辑podfile文件夹了，非常重要，文件如下：
 
 ```
 # Uncomment the next line to define a global platform for your project
@@ -65,10 +67,11 @@ target 'xxxxxx-tvOS' do
 end
 ```
 
-下面这部分依赖基本是就是React核心库部分的东西，如果和自己本身的工程有差异可以对比检查修改下，
+3. 下面这部分依赖基本是就是React核心库部分的东西，如果和自己本身的工程有差异可以对比检查修改下，
 这里面添加的工程路径就是物理路径，而模块名字则是对应目录下的xxx.podspec文件的名字，其他的就是自己用到的依赖库了。
-podfile改完记得pod install，还要记得删除原来libs引用方式的工程文件
+4. podfile改完记得pod install，还要记得删除原来libs引用方式的工程文件
 
+```
  rn_path = '../node_modules/react-native'
  pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/"
  pod 'React', path: rn_path, subspecs: [
@@ -86,5 +89,7 @@ podfile改完记得pod install，还要记得删除原来libs引用方式的工�
  'RCTVibration',
  'RCTWebSocket'
  ]
+```
+### 问题汇总
 莫名其妙找不到JS库facebook/react-native#14749 (comment)
 在React集成库里面添加BatchedBridgeCxxBridge这个就可以了
