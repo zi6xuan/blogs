@@ -95,4 +95,4 @@ end
 莫名其妙找不到JS库
 > [相似问题](https://github.com/facebook/react-native/issues/14749#issuecomment-318340658)
 
-在React集成库里面添加~~~BatchedBridge~~~CxxBridge这个就可以了
+在React集成库里面添加 ~~~BatchedBridge~~~ CxxBridge这个就可以了
