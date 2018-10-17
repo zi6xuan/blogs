@@ -69,7 +69,6 @@ end
 
 3. 下面这部分依赖基本是就是React核心库部分的东西，如果和自己本身的工程有差异可以对比检查修改下，
 这里面添加的工程路径就是物理路径，而模块名字则是对应目录下的xxx.podspec文件的名字，其他的就是自己用到的依赖库了。
-4. podfile改完记得pod install，还要记得删除原来libs引用方式的工程文件
 
 ```
  rn_path = '../node_modules/react-native'
@@ -90,6 +89,8 @@ end
  'RCTWebSocket'
  ]
 ```
+4. podfile改完记得pod install，还要记得删除原来libs引用方式的工程文件
+
 ### 问题汇总
 莫名其妙找不到JS库facebook/react-native#14749 (comment)
 在React集成库里面添加BatchedBridgeCxxBridge这个就可以了
